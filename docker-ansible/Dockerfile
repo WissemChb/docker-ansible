@@ -9,6 +9,9 @@ ENV TERM=xterm-265color
 RUN yum -y update && \
     yum -y install ansible
 
+#Copy backed in playbook
+COPY ansible /ansible
+
 #Add voulume for ANsible playbooks
 VOLUME [ "/ansible" ]
 WORKDIR /ansible
